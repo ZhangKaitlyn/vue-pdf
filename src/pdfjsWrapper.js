@@ -1,4 +1,4 @@
-import { PDFLinkService } from 'pdfjs-dist/lib/web/pdf_link_service';
+import { PDFLinkService } from './pdfjs-dist/lib/web/pdf_link_service';
 
 var pendingOperation = Promise.resolve();
 
@@ -207,7 +207,7 @@ export default function(PDFJS) {
 				viewport: viewport
 			});
 
-			annotationLayerElt.style.visibility = 'hidden';
+			// annotationLayerElt.style.visibility = 'hidden';
 			clearAnnotations();
 
 			var viewer = {
