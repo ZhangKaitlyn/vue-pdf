@@ -112,7 +112,7 @@ export default function(PDFJS) {
 					var viewport = page.getViewport({ scale: 1 });
 					printContainerElement.appendChild(win.document.createElement('style')).textContent =
 						'@supports ((size:A4) and (size:1pt 1pt)) {' +
-							'@page { margin: 1pt; size: ' + ((viewport.width * PRINT_UNITS) / CSS_UNITS) + 'pt ' + ((viewport.height * PRINT_UNITS) / CSS_UNITS) + 'pt; }' +
+							'@page { margin: 1pt; }' +
 						'}' +
             '#print-canvas { display: none }' +
 
@@ -168,11 +168,12 @@ export default function(PDFJS) {
 						win.document.execCommand('print', false, null);
 						} else {
 						win.print();
-					  }
+            }
+            emitEvent('canvasReady')
             removePrintContainer();
 				})
 				.catch(function(err) {
-
+          emitEvent('canvasReady')
 					removePrintContainer();
 					emitEvent('error', err);
 				})
