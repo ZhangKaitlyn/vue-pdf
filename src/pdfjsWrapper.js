@@ -97,7 +97,7 @@ export default function(PDFJS) {
         printContainerElement.scrolling = 'no';
         printContainerElement.width = '0px;'
         printContainerElement.height = '0px;'
-        printContainerElement.style.cssText = 'position: absolute; top: 0; left: 0';
+        printContainerElement.style.cssText = 'position: absolute; top: 0; left: 0;text-align: center;';
 
         window.document.body.appendChild(printContainerElement);
         resolve(window)
@@ -111,9 +111,6 @@ export default function(PDFJS) {
 
 					var viewport = page.getViewport({ scale: 1 });
 					printContainerElement.appendChild(win.document.createElement('style')).textContent =
-						'@supports ((size:A4) and (size:1pt 1pt)) {' +
-							'@page { margin: 1pt; }' +
-						'}' +
             '#print-canvas { display: none }' +
 
 						'@media print {' +
