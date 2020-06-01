@@ -10908,7 +10908,7 @@ function () {
           force = _ref7$force === void 0 ? false : _ref7$force;
       (0, _util.assert)(reason instanceof Error, 'PDFPageProxy._abortOperatorList: Expected "reason" argument.');
 
-      if (!intentState.streamReader) {
+      if (!intentState || !intentState.streamReader) {
         return;
       }
 
