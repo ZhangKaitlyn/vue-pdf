@@ -10759,7 +10759,7 @@ function () {
         if (intent === 'oplist') {
           return;
         }
-
+        if(!intentState) return
         intentState.renderTasks.forEach(function (renderTask) {
           var renderCompleted = renderTask.capability.promise["catch"](function () {});
           waitOn.push(renderCompleted);
@@ -10913,7 +10913,7 @@ function () {
       }
 
       if (!force) {
-        if (intentState.renderTasks.length !== 0) {
+        if (!intentState || !intentState.renderTasks || intentState.renderTasks.length !== 0) {
           return;
         }
 
