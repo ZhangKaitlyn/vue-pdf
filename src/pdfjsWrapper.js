@@ -97,7 +97,7 @@ export default function(PDFJS) {
         printContainerElement.scrolling = 'no';
         printContainerElement.width = '0px;'
         printContainerElement.height = '0px;'
-        printContainerElement.style.cssText = 'position: absolute; top: 0; left: 0;text-align: center;';
+        printContainerElement.style.cssText = 'position: absolute; top: 0; left: 0; right: 0; text-align: center;';
 
         window.document.body.appendChild(printContainerElement);
         resolve(window)

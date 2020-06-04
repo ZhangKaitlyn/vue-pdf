@@ -1,6 +1,6 @@
 {
   "name": "@hrtfj/vue-pdf",
-  "version": "4.0.19",
+  "version": "4.0.20",
   "description": "vue.js pdf viewer",
   "main": "src/vuePdfNoSss.vue",
   "scripts": {},
